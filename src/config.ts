@@ -111,3 +111,17 @@ export const friendGroups: FriendGroup[] = [
 		],
 	},
 ];
+/* 
+# 关于部分
+文字内容src\content\spec\about.md
+
+# 赞助部分
+文字内容src\content\spec\sponsor.md
+支付方式src\content\spec\sponsor-methods.json
+赞助感谢src\content\spec\sponsor-thanks.json
+支付图片等资源放在public\sponsor目录下
+
+# 关于一些资源
+网站图标public\favicon\favicon.png
+头像public\assets\images\avatar.png
+*/
