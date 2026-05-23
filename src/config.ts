@@ -1,6 +1,5 @@
 import type {
 	ExpressiveCodeConfig,
-	FriendLink,
 	FriendGroup,
 	LicenseConfig,
 	NavBarConfig,
