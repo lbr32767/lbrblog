@@ -58,6 +58,13 @@ export type FriendLink = {
 	description?: string;
 };
 
+export type FriendGroup = {
+	title: string;
+	description?: string;
+	priority: number;
+	links: FriendLink[];
+};
+
 export type NavBarLink = {
 	name: string;
 	url: string;

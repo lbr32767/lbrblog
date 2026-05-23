@@ -1,6 +1,7 @@
 import type {
 	ExpressiveCodeConfig,
 	FriendLink,
+	FriendGroup,
 	LicenseConfig,
 	NavBarConfig,
 	ProfileConfig,
@@ -77,11 +78,31 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 	theme: "github-dark",
 };
 
-export const friendLinks: FriendLink[] = [
+export const friendGroups: FriendGroup[] = [
 	{
-		name: "二叉树树",
-		url: "https://2x.nz/",
-		avatar: "",
-		description: "二叉树树的博客",
+		title: "项目",
+		description: "Lbr 维护的项目",
+		priority: 1,
+		links: [
+			{
+				name: "hexcasting.cn",
+				url: "https://hexcasting.cn/",
+				avatar: "",
+				description: "由lbr维护的hexcasting工具网站",
+			},
+		],
+	},
+	{
+		title: "友链",
+		description: "用于seo的友链",
+		priority: 10000,
+		links: [
+			{
+				name: "二叉树树",
+				url: "https://2x.nz/",
+				avatar: "",
+				description: "二叉树树的博客",
+			},
+		],
 	},
 ];
