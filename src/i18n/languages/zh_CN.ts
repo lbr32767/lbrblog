@@ -36,4 +36,9 @@ export const zh_CN: Translation = {
 	[Key.author]: "作者",
 	[Key.publishedAt]: "发布于",
 	[Key.license]: "许可协议",
+
+	[Key.sponsor]: "赞助",
+	[Key.sponsorDescription]: "如果您觉得我的内容对您有帮助，欢迎赞助支持！",
+	[Key.sponsorMethods]: "赞助方式",
+	[Key.sponsorThanks]: "感谢您的支持！",
 };

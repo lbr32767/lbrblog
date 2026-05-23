@@ -36,4 +36,9 @@ export const zh_TW: Translation = {
 	[Key.author]: "作者",
 	[Key.publishedAt]: "發佈於",
 	[Key.license]: "許可協議",
+
+	[Key.sponsor]: "贊助",
+	[Key.sponsorDescription]: "如果您覺得我的內容對您有幫助，歡迎贊助支持！",
+	[Key.sponsorMethods]: "贊助方式",
+	[Key.sponsorThanks]: "感謝您的支持！",
 };

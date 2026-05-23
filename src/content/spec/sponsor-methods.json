@@ -1,0 +1,14 @@
+{
+	"methods": [
+		{
+			"name": "支付宝",
+			"qrCode": "/sponsor/alipay.png",
+			"description": "使用支付宝扫码赞助"
+		},
+		{
+			"name": "微信支付",
+			"qrCode": "/sponsor/wechat.png",
+			"description": "使用微信扫码赞助"
+		}
+	]
+}

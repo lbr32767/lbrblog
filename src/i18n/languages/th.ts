@@ -36,4 +36,10 @@ export const th: Translation = {
 	[Key.author]: "ผู้เขียน",
 	[Key.publishedAt]: "เผยแพร่เมื่อ",
 	[Key.license]: "สัญญาอนุญาต",
+
+	[Key.sponsor]: "ผู้สนับสนุน",
+	[Key.sponsorDescription]:
+		"หากคุณพบว่าเนื้อหาของฉันมีประโยชน์ การสนับสนุนของคุณจะได้รับการชื่นชมอย่างมาก!",
+	[Key.sponsorMethods]: "วิธีการสนับสนุน",
+	[Key.sponsorThanks]: "ขอบคุณสำหรับการสนับสนุนของคุณ!",
 };

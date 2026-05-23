@@ -49,6 +49,7 @@ export enum LinkPreset {
 	Archive = 1,
 	About = 2,
 	Friends = 3,
+	Sponsor = 4,
 }
 
 export type FriendLink = {
@@ -114,4 +115,16 @@ export type BlogPostData = {
 
 export type ExpressiveCodeConfig = {
 	theme: string;
+};
+
+export type SponsorMethod = {
+	name: string;
+	qrCode: string;
+	description?: string;
+};
+
+export type SponsorConfig = {
+	enable: boolean;
+	description?: string;
+	methods: SponsorMethod[];
 };

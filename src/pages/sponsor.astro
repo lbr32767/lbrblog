@@ -1,0 +1,110 @@
+---
+import { getEntry, render } from "astro:content";
+import Markdown from "@components/misc/Markdown.astro";
+import I18nKey from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import sponsorMethodsData from "../content/spec/sponsor-methods.json";
+import sponsorThanksData from "../content/spec/sponsor-thanks.json";
+import type { SponsorMethods, SponsorThanks } from "../types/sponsor";
+
+const sponsorMethods = sponsorMethodsData as SponsorMethods;
+const sponsorThanks = sponsorThanksData as SponsorThanks;
+
+const sponsorPost = await getEntry("spec", "sponsor");
+
+if (!sponsorPost) {
+	throw new Error("Sponsor page content not found");
+}
+
+const { Content } = await render(sponsorPost);
+const title = i18n(I18nKey.sponsor);
+---
+
+<MainGridLayout title={title} description={title}>
+	<div class="flex w-full rounded-[var(--radius-large)] overflow-hidden relative min-h-32">
+		<div class="card-base z-10 px-9 py-6 relative w-full">
+			<Markdown class="mt-2">
+				<Content />
+			</Markdown>
+
+			<div class="mb-8 mt-8">
+				<h2 class="text-xl font-bold text-[var(--primary)] mb-4">
+					{i18n(I18nKey.sponsorMethods)}
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					{
+						sponsorMethods.methods.map((method) => (
+							<div class="flex flex-col items-center p-6 rounded-xl bg-[var(--card-bg)] border border-[var(--primary)]/[0.12] hover:border-[var(--primary)]/[0.24] transition-colors duration-200">
+								<h3 class="text-lg font-semibold text-[var(--primary)] mb-4">
+									{method.name}
+								</h3>
+								<div class="w-48 h-48 rounded-lg overflow-hidden bg-white p-2 shadow-md">
+									<img
+										src={method.qrCode}
+										alt={method.name}
+										class="w-full h-full object-contain"
+										loading="lazy"
+									/>
+								</div>
+								{method.description && (
+									<p class="text-sm text-[var(--primary)]/60 mt-3 text-center">
+										{method.description}
+									</p>
+								)}
+							</div>
+						))
+					}
+				</div>
+			</div>
+
+			<div class="border-t border-[var(--primary)]/[0.12] pt-8">
+				<h2 class="text-xl font-bold text-[var(--primary)] mb-6">
+					{i18n(I18nKey.sponsorThanks)}
+				</h2>
+				<div class="space-y-4">
+					{
+						sponsorThanks.sponsors.map((sponsor) => (
+							<div class="p-4 rounded-lg bg-[var(--card-bg)] border border-[var(--primary)]/[0.08] hover:border-[var(--primary)]/[0.16] transition-colors duration-200">
+								<div class="flex items-start justify-between mb-2">
+									<div class="flex items-center gap-3">
+										{
+											sponsor.avatar ? (
+												<img
+													src={sponsor.avatar}
+													alt={sponsor.name}
+													class="w-10 h-10 rounded-full object-cover"
+													loading="lazy"
+												/>
+											) : (
+												<div class="w-10 h-10 rounded-full bg-[var(--primary)]/[0.12] flex items-center justify-center text-[var(--primary)] font-semibold">
+													{sponsor.name.charAt(0)}
+												</div>
+											)
+										}
+										<div>
+											<h4 class="font-semibold text-[var(--primary)]">
+												{sponsor.name}
+											</h4>
+											<p class="text-sm text-[var(--primary)]/60">
+												{sponsor.date} · {sponsor.method}
+											</p>
+										</div>
+									</div>
+									<span class="text-[var(--primary)] font-semibold">
+										{sponsor.amount}
+									</span>
+								</div>
+								{sponsor.message && (
+									<p class="text-[var(--primary)]/80 mt-2 pl-13">
+										"{sponsor.message}"
+									</p>
+								)}
+							</div>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</MainGridLayout>

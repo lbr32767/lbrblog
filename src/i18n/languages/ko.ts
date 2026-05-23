@@ -36,4 +36,10 @@ export const ko: Translation = {
 	[Key.author]: "저자",
 	[Key.publishedAt]: "게시일",
 	[Key.license]: "라이선스",
+
+	[Key.sponsor]: "후원",
+	[Key.sponsorDescription]:
+		"콘텐츠가 도움이 되셨다면 후원해 주시면 감사하겠습니다!",
+	[Key.sponsorMethods]: "후원 방법",
+	[Key.sponsorThanks]: "후원해 주셔서 감사합니다!",
 };

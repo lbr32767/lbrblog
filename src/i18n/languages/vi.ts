@@ -36,4 +36,10 @@ export const vi: Translation = {
 	[Key.author]: "Tác giả",
 	[Key.publishedAt]: "Đăng vào lúc",
 	[Key.license]: "Giấy phép bản quyền",
+
+	[Key.sponsor]: "Tài trợ",
+	[Key.sponsorDescription]:
+		"Nếu bạn thấy nội dung của tôi hữu ích, sự hỗ trợ của bạn sẽ được đánh giá cao!",
+	[Key.sponsorMethods]: "Phương thức tài trợ",
+	[Key.sponsorThanks]: "Cảm ơn sự hỗ trợ của bạn!",
 };

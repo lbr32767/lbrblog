@@ -36,4 +36,10 @@ export const ja: Translation = {
 	[Key.author]: "作者",
 	[Key.publishedAt]: "公開日",
 	[Key.license]: "ライセンス",
+
+	[Key.sponsor]: "スポンサー",
+	[Key.sponsorDescription]:
+		"コンテンツがお役に立ちましたら、ご支援いただけると幸いです！",
+	[Key.sponsorMethods]: "支援方法",
+	[Key.sponsorThanks]: "ご支援ありがとうございます！",
 };

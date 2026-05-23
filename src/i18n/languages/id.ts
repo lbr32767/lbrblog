@@ -36,4 +36,10 @@ export const id: Translation = {
 	[Key.author]: "Penulis",
 	[Key.publishedAt]: "Diterbitkan pada",
 	[Key.license]: "Lisensi",
+
+	[Key.sponsor]: "Sponsor",
+	[Key.sponsorDescription]:
+		"Jika Anda menemukan konten saya bermanfaat, dukungan Anda akan sangat dihargai!",
+	[Key.sponsorMethods]: "Metode Sponsorship",
+	[Key.sponsorThanks]: "Terima kasih atas dukungan Anda!",
 };

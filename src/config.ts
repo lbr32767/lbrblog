@@ -32,14 +32,20 @@ export const siteConfig: SiteConfig = {
 	},
 	favicon: [
 		{
-		  src: '/favicon/favicon.png',    // favicon 的路径，相对于 /public 目录
-		//   theme: 'light',              // （可选）'light' 或 'dark'，仅在您有亮色和暗色模式的不同 favicon 时设置
-		//   sizes: '32x32',              // （可选）favicon 的尺寸，仅在您有不同尺寸的 favicon 时设置
-		}
+			src: "/favicon/favicon.png", // favicon 的路径，相对于 /public 目录
+			//   theme: 'light',              // （可选）'light' 或 'dark'，仅在您有亮色和暗色模式的不同 favicon 时设置
+			//   sizes: '32x32',              // （可选）favicon 的尺寸，仅在您有不同尺寸的 favicon 时设置
+		},
 	],
 };
 export const navBarConfig: NavBarConfig = {
-	links: [LinkPreset.Home, LinkPreset.Archive, LinkPreset.About, LinkPreset.Friends],
+	links: [
+		LinkPreset.Home,
+		LinkPreset.Archive,
+		LinkPreset.About,
+		LinkPreset.Friends,
+		LinkPreset.Sponsor,
+	],
 };
 
 export const profileConfig: ProfileConfig = {

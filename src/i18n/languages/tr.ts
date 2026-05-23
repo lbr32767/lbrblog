@@ -36,4 +36,10 @@ export const tr: Translation = {
 	[Key.author]: "Yazar",
 	[Key.publishedAt]: "Yayınlanma:",
 	[Key.license]: "Lisans",
+
+	[Key.sponsor]: "Sponsor",
+	[Key.sponsorDescription]:
+		"İçeriğimi faydalı bulursanız, desteğiniz çok takdir edilecektir!",
+	[Key.sponsorMethods]: "Sponsorluk Yöntemleri",
+	[Key.sponsorThanks]: "Desteğiniz için teşekkürler!",
 };

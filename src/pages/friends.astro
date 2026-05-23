@@ -7,12 +7,12 @@ import { friendGroups } from "../config";
 const title = i18n(I18nKey.friends);
 
 function getFaviconUrl(url: string): string {
-  try {
-    const hostname = new URL(url).hostname;
-    return `https://favicon.im/${hostname}?larger=true`;
-  } catch {
-    return "";
-  }
+	try {
+		const hostname = new URL(url).hostname;
+		return `https://favicon.im/${hostname}?larger=true`;
+	} catch {
+		return "";
+	}
 }
 
 const sortedGroups = friendGroups.sort((a, b) => a.priority - b.priority);
