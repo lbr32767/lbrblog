@@ -7,6 +7,7 @@ import type {
 	LicenseConfig,
 	NavBarConfig,
 	ProfileConfig,
+	ScriptConfig,
 	SiteConfig,
 	SponsorConfig,
 } from "./types/config";
@@ -115,6 +116,18 @@ export const beianConfig: BeianConfig = {
 	gonganUrl: "https://beian.mps.gov.cn/#/query/webSearch?code=44090402441273",
 };
 
+export const scriptConfig: ScriptConfig = {
+	enable: true, // 是否启用自定义脚本
+	scripts: [
+		{
+			// Microsoft Clarity 追踪
+			content: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "wvymf6zjs0");`,
+		},
+		// 外部脚本示例：
+		// { src: "https://example.com/script.js", async: true },
+	],
+};
+
 export const friendGroups: FriendGroup[] = [
 	{
 		title: "项目",
@@ -189,6 +202,12 @@ export const friendGroups: FriendGroup[] = [
 - icp: ICP 备案号（留空不显示）
 - gongan: 公安备案号（留空不显示）
 
+## scriptConfig - 自定义脚本配置
+- enable: 是否启用自定义脚本
+- scripts: 脚本列表，支持两种形式：
+  - 内联脚本：{ content: "JS代码" }
+  - 外部脚本：{ src: "https://example.com/script.js", async: true, defer: false }
+
 ## friendGroups - 友链分组配置
 - title: 分组标题
 - description: 分组描述
@@ -207,4 +226,6 @@ export const friendGroups: FriendGroup[] = [
 # 关于一些资源
 网站图标public\favicon\favicon.png
 头像public\assets\images\avatar.png
+
+# 请关闭追踪相关配置
 */

@@ -167,3 +167,15 @@ export type BeianConfig = {
 	gongan: string;
 	gonganUrl: string;
 };
+
+export type CustomScript = {
+	src?: string; // 外部脚本 URL
+	content?: string; // 内联脚本内容
+	async?: boolean; // 是否异步加载
+	defer?: boolean; // 是否延迟加载
+};
+
+export type ScriptConfig = {
+	enable: boolean;
+	scripts: CustomScript[]; // 自定义脚本列表
+};
