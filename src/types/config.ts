@@ -145,3 +145,13 @@ export type SponsorConfig = {
 	description?: string;
 	methods: SponsorMethod[];
 };
+
+export type CommentConfig = {
+	enable: boolean;
+	repo: string;
+	repoId: string;
+	category: string;
+	categoryId: string;
+	mapping: "pathname" | "url" | "title" | "og:title";
+	lang: string;
+};
