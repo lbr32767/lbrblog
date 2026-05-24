@@ -119,12 +119,14 @@ export const beianConfig: BeianConfig = {
 export const scriptConfig: ScriptConfig = {
 	enable: true, // 是否启用自定义脚本
 	scripts: [
-		// {
-		// 	// Microsoft Clarity 追踪
-		// 	content: ``,
-		// },
-		// // 外部脚本示例：
-		// // { src: "https://example.com/script.js", async: true },
+		{
+			// Umami 追踪
+			src: "https://cloud.umami.is/script.js",
+			defer: true,
+			"data-website-id": "1f165bb4-f03d-4e0d-b651-677294c14d10",
+		},
+		// 外部脚本示例：
+		// { src: "https://example.com/script.js", async: true },
 	],
 };
 

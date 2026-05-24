@@ -148,13 +148,18 @@ const bannerOffset =
 		<link rel="alternate" type="application/rss+xml" title={profileConfig.name} href={`${Astro.site}rss.xml`}/>
 
 		<!-- Custom Scripts -->
-		{scriptConfig.enable && scriptConfig.scripts.map((script) => (
-			script.src ? (
-				<script is:inline src={script.src} async={script.async} defer={script.defer}></script>
-			) : (
-				<script is:inline set:html={script.content}></script>
-			)
-		))}
+		{scriptConfig.enable && scriptConfig.scripts.map((script) => {
+			if (script.src) {
+				const attrs = Object.entries(script)
+					.filter(([key]) => !["src", "content", "async", "defer"].includes(key))
+					.map(([key, value]) => `${key}="${value}"`)
+					.join(" ");
+				const asyncAttr = script.async ? " async" : "";
+				const deferAttr = script.defer ? " defer" : "";
+				return <Fragment set:html={`<script${asyncAttr}${deferAttr} src="${script.src}"${attrs ? " " + attrs : ""}></script>`} />;
+			}
+			return <script is:inline set:html={script.content}></script>;
+		})}
 
 	</head>
 	<body class=" min-h-screen transition " class:list={[{"lg:is-home": isHomePage, "enable-banner": enableBanner}]}

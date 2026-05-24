@@ -173,6 +173,7 @@ export type CustomScript = {
 	content?: string; // 内联脚本内容
 	async?: boolean; // 是否异步加载
 	defer?: boolean; // 是否延迟加载
+	[key: string]: string | boolean | undefined; // 支持自定义属性，如 data-website-id
 };
 
 export type ScriptConfig = {
