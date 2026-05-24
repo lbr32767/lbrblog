@@ -155,3 +155,15 @@ export type CommentConfig = {
 	mapping: "pathname" | "url" | "title" | "og:title";
 	lang: string;
 };
+
+export type FriendConfig = {
+	enable: boolean;
+};
+
+export type BeianConfig = {
+	enable: boolean;
+	icp: string;
+	icpUrl: string;
+	gongan: string;
+	gonganUrl: string;
+};

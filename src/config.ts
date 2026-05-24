@@ -1,11 +1,14 @@
 import type {
+	BeianConfig,
 	CommentConfig,
 	ExpressiveCodeConfig,
+	FriendConfig,
 	FriendGroup,
 	LicenseConfig,
 	NavBarConfig,
 	ProfileConfig,
 	SiteConfig,
+	SponsorConfig,
 } from "./types/config";
 import { LinkPreset } from "./types/config";
 
@@ -86,12 +89,30 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 
 export const commentConfig: CommentConfig = {
 	enable: true,
-	repo: "lbr32767/LbrBlog-CommentSection",//仓库名称
-	repoId: "R_kgDOSmGMYg", // 请从 https://giscus.app/zh-CN 获取
+	repo: "lbr32767/LbrBlog-CommentSection",
+	repoId: "R_kgDOSmGMYg",
 	category: "Announcements",
-	categoryId: "DIC_kwDOSmGMYs4C9tJI", // 请从 https://giscus.app/zh-CN 获取
+	categoryId: "DIC_kwDOSmGMYs4C9tJI",
 	mapping: "pathname",
 	lang: "zh-CN",
+};
+
+export const friendConfig: FriendConfig = {
+	enable: true,
+};
+
+export const sponsorConfig: SponsorConfig = {
+	enable: true,
+	description: "",
+	methods: [],
+};
+
+export const beianConfig: BeianConfig = {
+	enable: false, // 备案模式：开启后将隐藏赞助、友链、个人、评论区、联系方式（用于备案过程中临时开启）
+	icp: "", // ICP备案号，留空则不显示
+	icpUrl: "https://beian.miit.gov.cn/#/Integrated/recordQuery",
+	gongan: "", // 公安备案号，留空则不显示
+	gonganUrl: "https://beian.mps.gov.cn/#/query/webSearch?code=44090402441273",
 };
 
 export const friendGroups: FriendGroup[] = [
@@ -123,6 +144,57 @@ export const friendGroups: FriendGroup[] = [
 	},
 ];
 /* 
+# 配置功能说明
+
+## siteConfig - 网站基础配置
+- title: 网站标题
+- subtitle: 网站副标题
+- lang: 语言代码
+- themeColor: 主题色配置
+- banner: 横幅配置
+- toc: 目录配置
+- favicon: 网站图标
+
+## navBarConfig - 导航栏配置
+- links: 导航链接列表，支持预设链接和自定义链接
+
+## profileConfig - 个人信息配置
+- avatar: 头像路径
+- name: 昵称
+- bio: 简介
+- links: 社交链接列表
+
+## licenseConfig - 文章许可配置
+- enable: 是否启用
+- name: 许可证名称
+- url: 许可证链接
+
+## commentConfig - 评论系统配置 (Giscus)
+- enable: 是否启用评论
+- repo: GitHub 仓库名
+- repoId: 仓库 ID（从 giscus.app 获取）
+- category: Discussion 分类
+- categoryId: 分类 ID（从 giscus.app 获取）
+- mapping: 页面映射方式
+- lang: 语言
+
+## friendConfig - 友链开关
+- enable: 是否启用友链页面
+
+## sponsorConfig - 赞助开关
+- enable: 是否启用赞助页面
+
+## beianConfig - 备案配置
+- enable: 备案模式开关（开启后隐藏赞助、友链、个人、评论区、联系方式）
+- icp: ICP 备案号（留空不显示）
+- gongan: 公安备案号（留空不显示）
+
+## friendGroups - 友链分组配置
+- title: 分组标题
+- description: 分组描述
+- priority: 优先级（数字越小越靠前）
+- links: 友链列表
+
 # 关于部分
 文字内容src\content\spec\about.md
 

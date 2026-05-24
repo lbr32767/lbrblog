@@ -1,8 +1,8 @@
 ---
-import { commentConfig } from "@/config";
+import { beianConfig, commentConfig } from "@/config";
 ---
 
-{commentConfig.enable && (
+{commentConfig.enable && !beianConfig.enable && (
 	<div class="comment-section mt-8 rounded-xl overflow-hidden">
 		<script
 			src="https://giscus.app/client.js"

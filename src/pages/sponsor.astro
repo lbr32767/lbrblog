@@ -7,6 +7,11 @@ import MainGridLayout from "@layouts/MainGridLayout.astro";
 import type { SponsorMethods, SponsorThanks } from "@/types/config";
 import sponsorMethodsData from "../content/spec/sponsor-methods.json";
 import sponsorThanksData from "../content/spec/sponsor-thanks.json";
+import { sponsorConfig } from "../config";
+
+if (!sponsorConfig.enable) {
+	return Astro.redirect("/");
+}
 
 const sponsorMethods = sponsorMethodsData as SponsorMethods;
 const sponsorThanks = sponsorThanksData as SponsorThanks;

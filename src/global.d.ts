@@ -1,5 +1,15 @@
 import type { AstroIntegration } from "@swup/astro";
 
+declare module "*.svelte" {
+	import type { SvelteComponent } from "svelte";
+	type AnyProps = Record<string, any>;
+	interface AstroSvelteComponent {
+		new (props: AnyProps): SvelteComponent<AnyProps>;
+	}
+	const Component: AstroSvelteComponent;
+	export default Component;
+}
+
 declare global {
 	interface Window {
 		// type from '@swup/astro' is incorrect
