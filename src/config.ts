@@ -185,7 +185,7 @@ export const friendGroups: FriendGroup[] = [
 - enable: 是否启用赞助页面
 
 ## beianConfig - 备案配置
-- enable: 备案模式开关（开启后隐藏赞助、友链、个人、评论区、联系方式）
+- enable: 备案模式开关（开启后隐藏赞助、友链、个人、评论区、联系方式） (有些内容出现不让备案)
 - icp: ICP 备案号（留空不显示）
 - gongan: 公安备案号（留空不显示）
 
