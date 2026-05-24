@@ -119,12 +119,12 @@ export const beianConfig: BeianConfig = {
 export const scriptConfig: ScriptConfig = {
 	enable: true, // 是否启用自定义脚本
 	scripts: [
-		{
-			// Microsoft Clarity 追踪
-			content: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "wvymf6zjs0");`,
-		},
-		// 外部脚本示例：
-		// { src: "https://example.com/script.js", async: true },
+		// {
+		// 	// Microsoft Clarity 追踪
+		// 	content: ``,
+		// },
+		// // 外部脚本示例：
+		// // { src: "https://example.com/script.js", async: true },
 	],
 };
 
