@@ -29,6 +29,10 @@ export default defineConfig({
 	site: "https://blog.hx0.top/",
 	base: "/",
 	trailingSlash: "always",
+	server: {
+		host: "127.0.0.1",
+		port: 10008,
+	},
 	integrations: [
 		tailwind({
 			nesting: true,
